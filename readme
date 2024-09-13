@@ -1,0 +1,30 @@
+Sistema de Controle de Estoque
+Descrição
+Este projeto implementa um Sistema de Controle de Estoque utilizando comandos SQL para gerenciar fornecedores, produtos e pedidos de reposição. O sistema permite realizar operações de inserção, consulta, atualização e exclusão de dados, além de consultas utilizando JOIN para relacionar dados entre diferentes tabelas.
+
+Funcionalidades
+Tabela de Fornecedores: Armazena informações sobre os fornecedores, incluindo ID, nome, contato e telefone.
+Tabela de Produtos: Armazena informações sobre os produtos, incluindo ID, nome, quantidade em estoque, preço unitário e referência ao fornecedor.
+Tabela de Pedidos de Reposição: Armazena informações sobre os pedidos de reposição, incluindo ID, produto, quantidade de reposição e data do pedido.
+Consultas e Operações:
+Inserção de fornecedores, produtos e pedidos de reposição.
+Consultas de produtos e seus fornecedores.
+Atualização de estoque de produtos.
+Exclusão de registros de fornecedores e produtos.
+Relacionamento de dados utilizando JOIN.
+Requisitos
+Banco de Dados MySQL: O sistema foi desenvolvido para ser executado em um ambiente MySQL.
+Ferramenta SQL: Qualquer ferramenta que permita a execução de comandos SQL, como MySQL Workbench.
+Estrutura do Banco de Dados
+O banco de dados contém três tabelas principais:
+
+Fornecedores: Armazena informações dos fornecedores.
+Produtos: Armazena informações dos produtos e sua quantidade em estoque.
+PedidosReposicao: Armazena informações sobre os pedidos de reposição de estoque.
+Como Executar
+Criar o Banco de Dados: Execute o comando CREATE DATABASE SistemaControleEstoque;.
+Usar o Banco de Dados: Selecione o banco de dados com USE SistemaControleEstoque;.
+Criar as Tabelas: Execute os comandos SQL para criar as tabelas Fornecedores, Produtos e PedidosReposicao.
+Inserir Dados: Execute os comandos de INSERT para inserir os fornecedores, produtos e pedidos de reposição.
+Consultar Dados: Execute os comandos SELECT para visualizar os produtos, fornecedores e pedidos de reposição.
+Atualizar e Excluir Dados: Utilize os comandos UPDATE e DELETE conforme necessário para atualizar quantidades de produtos e remover fornecedores ou produtos.
