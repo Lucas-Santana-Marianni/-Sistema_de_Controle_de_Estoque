@@ -1,0 +1,25 @@
+# Ignorar arquivos desnecessários
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorar arquivos de configuração locais do MySQL Workbench
+*.sqlproj
+*.sqlsettings
+
+# Ignorar arquivos temporários de execução
+*.out
+*.pid
+
+# Ignorar arquivos de backup de banco de dados
+*.sql~
+*.sql.bak
+
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar IDEs e ambientes de desenvolvimento
+.vscode/
+.idea/
