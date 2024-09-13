@@ -1,0 +1,59 @@
+create database SistemaControleEstoque;
+
+use SistemaControleEstoque; 
+
+create table Fornecedores (
+FornecedorID int primary key auto_increment,
+NomeFornecedor varchar(100),
+ContatoFornecedor varchar(100),
+telefoneFornecedor varchar(20)
+);
+
+create table Produtos (
+ProdutoID int primary key auto_increment,
+NomeProduto varchar(100),
+QuantidadeEstoque int,
+PrecoUnitario decimal (10,2),
+FornecedorID int, 
+foreign key (FornecedorID) references Fornecedores(FornecedorID)
+);
+
+create table PedidosReposicao (
+PedidoID int primary key auto_increment,
+ProdutoID int,
+QuantidadeReposicao int,
+DataPedido date,
+foreign key (ProdutoID) references Produtos(ProdutoID)
+);
+
+insert into Fornecedores (NomeFornecedor, ContatoFornecedor, TelefoneFornecedor)
+values ('Fornecedor A', 'FornecedorA@gmail.com', '1234-4321'),
+	   ('Fornecedor B', 'FornecedorB@gmail.com', '6789-9876') ;
+       
+insert into Produtos (NomeProduto, QuantidadeEstoque, PrecoUnitario, FornecedorID)
+values ('Produto Y', '50', '15.00', '1'),
+       ('Produto Z', '35', '20.00', '2');
+       
+insert into PedidosReposicao (ProdutoID, QuantidadeReposicao, DataPedido)
+values ('1', '20', '2024-09-10'),
+       ('2','30', '2024-09-13');
+       
+select * from Produtos;
+
+select p.NomeProduto, pr.QuantidadeReposicao, pr.DataPedido
+from PedidosReposicao pr 
+join Produtos p on pr.ProdutoID = p.ProdutoID;
+
+select p.NomeProduto, f.NomeFornecedor
+from 	Produtos p
+join Fornecedores f on p.FornecedorID;
+
+update produtos
+set QuantidadeProdutos = QuantidadeProdutos + 20
+where ProdutoID = 1;
+
+delete from Fornecedores
+where FornecedorID = 2;
+
+delete from Produtos
+where ProdutoID = 2;
